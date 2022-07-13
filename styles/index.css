@@ -4,7 +4,11 @@ body {
 }
 
 .container {
-    height: 90vh;
+    width: 50vw;
+    height: 80vh;
+    max-width: 460px;
+    margin: 5em auto auto auto;
+    padding: auto;
 }
 
 h1 {
@@ -30,11 +34,21 @@ h5 {
 #start-button-container {
     background-color: #2176AE;
     color: #f5f5f5;
-    margin: 0;
+    margin: 5em auto auto auto;
     cursor: pointer;
+    width: 30vw;
 }
 
 #go-button {
-    margin-right: auto;
-    margin-left: auto;
+    background-color: #f5f5f5;
+    color: #2176AE;
+    margin: auto;
+    width: 20em;
+    height: 5em;
+    border: 4px solid #2383D7;
+}
+
+#go-button:hover {
+    background-color: #0069d9;
+    color: #f5f5f5;
 }
