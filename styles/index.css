@@ -1,0 +1,40 @@
+body {
+    background-color: #2176AE;
+    color: #f5f5f5;
+}
+
+.container {
+    height: 90vh;
+}
+
+h1 {
+    font-size: 4em;
+}
+
+h5 {
+    color: #292929;
+}
+
+.form-label {
+    color: #333333;
+}
+
+#settings-button-container {
+    position: absolute;
+    bottom: 1.2em;
+    left: 1.2em;
+    z-index: 1;
+    width: auto;
+}
+
+#start-button-container {
+    background-color: #2176AE;
+    color: #f5f5f5;
+    margin: 0;
+    cursor: pointer;
+}
+
+#go-button {
+    margin-right: auto;
+    margin-left: auto;
+}
