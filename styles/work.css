@@ -91,3 +91,11 @@ h5 {
     font-size: 0.5em;
     margin-top: auto;
 }
+
+.float-left-button-container {
+    position: absolute;
+    bottom: 1.2em;
+    left: 1.2em;
+    z-index: 1;
+    width: auto;
+}

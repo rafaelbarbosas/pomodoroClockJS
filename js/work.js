@@ -9,3 +9,7 @@ window.onload = () => {
     breakTime = Number.parseInt(urlParams.get("breakTime"));
     hasPauses = urlParams.get("hasPauses") == 'true';
 }
+
+const navigateToHome = () => {
+    window.location.href = "home.html";
+}
