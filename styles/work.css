@@ -19,9 +19,27 @@ h5 {
     color: #292929;
 }
 
+.title {
+    display: flex;
+    text-align: center;
+    font-family: 'Edu VIC WA NT Beginner', cursive;
+    font-size: 1.5em;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: inherit;
+    position: absolute;
+    bottom: 10vh;
+    right: 27vw;
+}
+
 .action-button-container {
+    display: flex;
+    justify-content: center;
     color: #f5f5f5;
-    margin: 5em auto auto auto;
     cursor: pointer;
     width: 30vw;
 }
@@ -29,12 +47,47 @@ h5 {
 .action-button {
     background-color: #f5f5f5;
     color: #60114c;
-    margin: auto;
     width: 10em;
     height: 5em;
+}
+
+.action-button-left {
+    float: right;
+}
+
+.action-button-rigth {
+    float: left;
 }
 
 .action-button:hover {
     background-color: #60114c;
     color: #f5f5f5;
+}
+
+.timer-container {
+    color: #f5f5f5;
+    margin: 2em auto 2em auto;
+    width: 30vw;
+    height: 10vw;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.timer-container-item {
+    display: flex;
+    width: 3em;
+    font-size: 5em;
+    font-variant-numeric: tabular-nums;
+}
+
+.timer-container-number {
+    margin-top: auto;
+    order: 1;
+}
+
+.timer-container-text {
+    order: 3;
+    font-size: 0.5em;
+    margin-top: auto;
 }

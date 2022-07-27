@@ -7,29 +7,51 @@
         <!-- Import font awesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+        <!-- Import font 'Edu VIC WA NT Beginner' from Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner&display=swap" rel="stylesheet">
+
         <link rel="stylesheet" href="../styles/work.css">
         <script src="../js/work.js"></script>
     </head>
     <body>
         <div class="container">
-            <div class="row">
+            <div class="title row">
                 <div class="col-md-12">
-                    <h1>Let's work</h1>
+                    <h1>Let's work!</h1>
                 </div>
             </div>
-            <div class="row">
-                <div class="action-button-container d-flex col-3">
+            <div class="timer-container row">
+                <!-- Timer container -->
+                <div class="timer-container-item">
+                    <div class="timer-container-number">
+                        <span id="minutes">00</span>
+                    </div>
+                    <div class="timer-container-text">
+                        <span>min</span>
+                    </div>
+                </div>
+                <div class="timer-container-item">
+                    <div class="timer-container-number">
+                        <span id="seconds">00</span>
+                    </div>
+                    <div class="timer-container-text">
+                        <span>sec</span>
+                    </div>
+                </div>
+            </div>
+            <div class="buttons-container row">
+                <div class="action-button-container col-12">
                     <!-- Button to initiate the work time -->
-                    <button class="action-button btn btn-danger"
+                    <button class="action-button action-button-left btn btn-danger"
                         id="pause-button"
                         onclick="pause()">
                         <!-- Icon:play -->
                         <i class="fa fa-pause"></i>
                     </button>
-                </div>
-                <div class="action-button-container d-flex col-9">
                     <!-- Button to initiate the work time -->
-                    <button class="action-button btn btn-danger"
+                    <button class="action-button action-button-right btn btn-danger"
                         id="start-button"
                         onclick="start()">
                         <!-- Icon:play -->
