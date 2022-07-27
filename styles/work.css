@@ -66,7 +66,10 @@ h5 {
 
 .timer-container {
     color: #f5f5f5;
+    background-color: #46183b;
+    border-radius: 5px;
     margin: 2em auto 2em auto;
+    padding: 0.8em;
     width: 30vw;
     height: 10vw;
     display: flex;
@@ -77,7 +80,7 @@ h5 {
 .timer-container-item {
     display: flex;
     width: 3em;
-    font-size: 5em;
+    font-size: 4em;
     font-variant-numeric: tabular-nums;
 }
 
