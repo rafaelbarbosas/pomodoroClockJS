@@ -19,6 +19,26 @@ h5 {
     color: #292929;
 }
 
+.title-container {
+    border-radius: 10px;
+    border: 1px solid #f5f5f5;
+}
+
+.title {
+    display: flex;
+    text-align: center;
+    font-family: 'Edu VIC WA NT Beginner', cursive;
+    font-size: 1.5em;
+}
+
+.subtitle {
+    text-align: center;
+}
+
+p {
+    font-style: italic;
+}
+
 .form-label {
     color: #333333;
 }
