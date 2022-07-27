@@ -13,3 +13,7 @@ window.onload = () => {
 const navigateToHome = () => {
     window.location.href = "home.html";
 }
+
+const goToBreak = () => {
+    window.location.href = "break.html";
+}
