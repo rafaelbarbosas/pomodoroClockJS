@@ -1,11 +1,16 @@
-pageState = {
+const PAUSE_HTML_ICON = '<i class="fa fa-pause"></i>';
+const STAR_HTML_ICON = '<i class="fa fa-play"></i>';
+
+const pageState = {
     currentState: "work",
     hasPauses: null,
+    isPaused: false,
     work: {
         time: null,
-        title: "Let's work!",
+        title: "Work time ⏰",
         buttonText: "Start Break",
         backgroundColor: "#7b1562",
+        color: "#f5f5f5",
         timer: {
             backgroundColor: "#46183b"
         },
@@ -15,13 +20,16 @@ pageState = {
             backgroundColorOnHover: "#46183b",
             colorOnHover: "#f5f5f5",
         },
-        color: "#f5f5f5"
+        container: {
+            backgroundColor: "rgba(96, 17, 76, 1)"
+        }
     },
     break: {
         time: null,
-        title: "Break Time",
+        title: "Break Time ☕",
         buttonText: "Start work",
         backgroundColor: "#627b15",
+        color: "#f5f5f5",
         timer: {
             backgroundColor: "#3b4618"
         },
@@ -31,7 +39,9 @@ pageState = {
             backgroundColorOnHover: "#3b4618",
             colorOnHover: "#f5f5f5",
         },
-        color: "#f5f5f5"
+        container: {
+            backgroundColor: "#3b4618cf"
+        }
     }
 };
 
@@ -43,6 +53,15 @@ window.onload = () => {
     pageState.hasPauses = urlParams.get("hasPauses") == 'true';
 
     updatePage();
+}
+
+const startPauseTimer = () => {
+    pageState.isPaused = !pageState.isPaused; // Toggle the pause state
+    // change the button icon
+    document.getElementById("action-button").innerHTML = (pageState.isPaused) ?
+        STAR_HTML_ICON : PAUSE_HTML_ICON;
+
+    // TODO - Pause/start the timer
 }
 
 const navigateToHome = () => {
@@ -82,4 +101,5 @@ const updatePage = () => {
     );
     document.body.style.backgroundColor = state.backgroundColor;
     document.body.style.color = state.color;
+    document.getElementsByClassName("container")[0].style.backgroundColor = state.container.backgroundColor;
 }

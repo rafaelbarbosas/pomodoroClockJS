@@ -1,9 +1,10 @@
 .container {
     width: 50vw;
-    height: 80vh;
+    height: -webkit-fill-available;
     max-width: 460px;
-    margin: 5em auto auto auto;
-    padding: auto;
+    min-width: 340px;
+    display: flex;
+    flex-direction: column;
 }
 
 h1 {
@@ -17,11 +18,15 @@ h5 {
 .title-container {
     border-radius: 10px;
     border: 1px solid #f5f5f5;
+    padding: 1px;
+    max-height: 300px;
+    margin-top: 3vh;
 }
 
 .title {
     display: flex;
     text-align: center;
+    text-decoration: underline;
     font-family: 'Edu VIC WA NT Beginner', cursive;
     font-size: 1.5em;
 }
