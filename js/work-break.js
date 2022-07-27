@@ -1,6 +1,8 @@
 const PAUSE_HTML_ICON = '<i class="fa fa-pause"></i>';
 const STAR_HTML_ICON = '<i class="fa fa-play"></i>';
 
+var timer = null;
+
 const pageState = {
     currentState: "work",
     isPaused: false,
@@ -50,8 +52,8 @@ window.onload = () => {
 
     // get the parameters from the URL
     var urlParams = new URLSearchParams(window.location.search);
-    pageState.work.time = Number.parseInt(urlParams.get("workTime")) | DEFAULT_WORK_TIME;
-    pageState.break.time = Number.parseInt(urlParams.get("breakTime")) | DEFAULT_BREAK_TIME;
+    pageState.work.time = Number.parseInt(urlParams.get("workTime") || DEFAULT_WORK_TIME);
+    pageState.break.time = Number.parseInt(urlParams.get("breakTime") || DEFAULT_BREAK_TIME);
 
     updatePage();
 }
@@ -80,9 +82,46 @@ const changeState = () => {
     updatePage();
 }
 
+const minutesToSeconds = (minutes) => {
+    return minutes * 60;
+}
+
+const setMinutes = () => {
+    const minutes = Math.floor(timer.time / 60);
+    const strMin = (minutes < 10) ? "0" + minutes : minutes;
+    document.getElementById("minutes").innerHTML = strMin;
+}
+
+const setSeconds = () => {
+    const seconds = timer.time % 60;
+    const strSec = (seconds < 10) ? "0" + seconds : seconds;
+    document.getElementById("seconds").innerHTML = strSec;
+}
+
+const setTimeOnPage = () => {
+    setMinutes();
+    setSeconds();
+}
+
+const onFinishTimer = () => {
+    window.alert("Time's up!");
+
+    // do a beep sound
+    var beep = new Audio("assets/beep.mp3");
+    beep.play();
+
+    // change the state
+    changeState();
+}
+
 const updatePage = () => {
-    // update the page based on the page state
     var state = pageState[pageState.currentState];
+
+    // create a timer object
+    timer = new Timer(minutesToSeconds(state.time), setTimeOnPage, onFinishTimer);
+    timer.start();
+
+    // update the page style based on the page state
     document.getElementById("title-text").innerHTML = state.title;
     document.getElementById("button-text").innerHTML = state.buttonText;
     document.getElementsByClassName("timer-container")[0].style.backgroundColor = state.timer.backgroundColor;
