@@ -3,7 +3,6 @@ const STAR_HTML_ICON = '<i class="fa fa-play"></i>';
 
 const pageState = {
     currentState: "work",
-    hasPauses: null,
     isPaused: false,
     work: {
         time: null,
@@ -46,11 +45,13 @@ const pageState = {
 };
 
 window.onload = () => {
+    const DEFAULT_WORK_TIME = 25;
+    const DEFAULT_BREAK_TIME = 5;
+
     // get the parameters from the URL
     var urlParams = new URLSearchParams(window.location.search);
-    pageState.work.time = Number.parseInt(urlParams.get("workTime"));
-    pageState.break.time = Number.parseInt(urlParams.get("breakTime"));
-    pageState.hasPauses = urlParams.get("hasPauses") == 'true';
+    pageState.work.time = Number.parseInt(urlParams.get("workTime")) | DEFAULT_WORK_TIME;
+    pageState.break.time = Number.parseInt(urlParams.get("breakTime")) | DEFAULT_BREAK_TIME;
 
     updatePage();
 }
