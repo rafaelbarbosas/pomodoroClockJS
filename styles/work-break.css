@@ -1,8 +1,3 @@
-body {
-    background-color: #7b1562;
-    color: #f5f5f5;
-}
-
 .buttons-container {
     display: flex;
     justify-content: center;
@@ -34,11 +29,6 @@ body {
 
 .action-button-rigth {
     float: left;
-}
-
-.action-button:hover {
-    background-color: #60114c;
-    color: #f5f5f5;
 }
 
 .timer-container {

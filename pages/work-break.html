@@ -15,14 +15,14 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner&display=swap" rel="stylesheet">
 
-        <link rel="stylesheet" href="../styles/work.css">
-        <script src="../js/work.js"></script>
+        <link rel="stylesheet" href="../styles/work-break.css">
+        <script src="../js/work-break.js"></script>
     </head>
     <body>
         <div class="container">
             <div class="title row">
                 <div class="col-md-12">
-                    <h1>Let's work!</h1>
+                    <h1 id="title-text">Let's work!</h1>
                 </div>
             </div>
             <div class="timer-container row">
@@ -47,18 +47,18 @@
             <div class="buttons-container row">
                 <div class="action-button-container col-12">
                     <!-- Button to initiate the work time -->
-                    <button class="action-button action-button-left btn btn-danger"
+                    <button class="action-button action-button-left btn btn-light"
                         id="pause-button"
                         onclick="pause()">
-                        <!-- Icon:play -->
+                        <!-- Icon -->
                         <i class="fa fa-pause"></i>
                     </button>
                     <!-- Button to initiate the work time -->
-                    <button class="action-button action-button-right btn btn-danger"
-                        id="break-button"
-                        onclick="goToBreak()">
+                    <button class="action-button action-button-right btn btn-light"
+                        id="button-text"
+                        onclick="changeState()">
                         <!-- Icon:play -->
-                        Go to break
+                        Start break
                     </button>
                 </div>
             </div>

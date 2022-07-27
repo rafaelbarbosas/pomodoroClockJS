@@ -17,7 +17,7 @@ updateHasPauses = () => {
 
 startWork = () => {
     // go to page work.html, passing workTime, breakTime, and hasPauses as parameters
-    window.location.href = "work.html?workTime=" + workTime +
+    window.location.href = "work-break.html?workTime=" + workTime +
         "&breakTime=" + breakTime +
         "&hasPauses=" + hasPauses;
 }
