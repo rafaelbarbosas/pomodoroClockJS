@@ -2,6 +2,20 @@
 const DEFAULT_WORK_TIME = 25;
 const DEFAULT_BREAK_TIME = 5;
 
+window.onload = () => {
+    // get the parameters from the local storage
+    const workTimeLocalStorage = localStorage.getItem("workTime");
+    const breakTimeLocalStorage = localStorage.getItem("breakTime");
+
+    if(workTimeLocalStorage){
+        document.getElementById("work-time").value = workTimeLocalStorage;
+    }
+
+    if(breakTimeLocalStorage){
+        document.getElementById("break-time").value = breakTimeLocalStorage;
+    }
+}
+
 updateWorkTime = () => {
   const workTime = document.getElementById("work-time").value || DEFAULT_WORK_TIME;
   localStorage.setItem("workTime", workTime);
