@@ -3,20 +3,10 @@
     </head>
     <body>
         <script>
-            // simple router
-            switch (window.location.pathname) {
-                // if current url does't contain a path or is "/home", redirect to home page
-                case "/":
-                    window.onload = function() {
-                        window.location.href = "pages/home.html";
-                    };
-                    break;
-                case "/index.html":
-                    window.onload = function() {
-                        window.location.href = "pages/home.html";
-                    };
-                    break;
-            }
+            // redirect to home page
+            window.onload = function() {
+                window.location.href = "pages/home.html";
+            };
         </script>
     </body>
 </html>
