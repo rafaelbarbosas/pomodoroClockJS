@@ -46,7 +46,7 @@
     border-radius: 5px;
     margin: 2em auto 2em auto;
     padding: 0.8em;
-    width: 30vw;
+    width: -webkit-fill-available;
     height: 10vw;
     min-width: 300px;
     min-height: 100px;
