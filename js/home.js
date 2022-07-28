@@ -14,5 +14,5 @@ updateBreakTime = () => {
 
 startWork = () => {
     // go to page work.html, passing workTime, breakTime, and hasPauses as parameters
-    window.location.href = "work-break.html";
+    window.location.href = "pomodoroSession.html";
 }
