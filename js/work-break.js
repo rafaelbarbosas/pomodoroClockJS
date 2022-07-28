@@ -50,10 +50,13 @@ window.onload = () => {
     const DEFAULT_WORK_TIME = 25;
     const DEFAULT_BREAK_TIME = 5;
 
-    // get the parameters from the URL
-    var urlParams = new URLSearchParams(window.location.search);
-    pageState.work.time = Number.parseInt(urlParams.get("workTime") || DEFAULT_WORK_TIME);
-    pageState.break.time = Number.parseInt(urlParams.get("breakTime") || DEFAULT_BREAK_TIME);
+    // get the parameters from the local storage
+    const workTime = localStorage.getItem("workTime");
+    const breakTime = localStorage.getItem("breakTime");
+
+    // set the time on the state object
+    pageState.work.time = Number.parseInt(workTime || DEFAULT_WORK_TIME);
+    pageState.break.time = Number.parseInt(breakTime || DEFAULT_BREAK_TIME);
 
     updatePage();
 }
