@@ -64,7 +64,12 @@ const startPauseTimer = () => {
     document.getElementById("action-button").innerHTML = (pageState.isPaused) ?
         STAR_HTML_ICON : PAUSE_HTML_ICON;
 
-    // TODO - Pause/start the timer
+    // start or pause the timer
+    if (pageState.isPaused) {
+        timer.pause();
+    } else {
+        timer.start();
+    }
 }
 
 const navigateToHome = () => {
@@ -86,29 +91,36 @@ const minutesToSeconds = (minutes) => {
     return minutes * 60;
 }
 
-const setMinutes = () => {
-    const minutes = Math.floor(timer.time / 60);
+const secondsToMinutes = (seconds) => {
+    const minutes = Math.floor(seconds / 60);
     const strMin = (minutes < 10) ? "0" + minutes : minutes;
+    return strMin;
+}
+
+const setMinutes = (strMin) => {
     document.getElementById("minutes").innerHTML = strMin;
 }
 
-const setSeconds = () => {
-    const seconds = timer.time % 60;
-    const strSec = (seconds < 10) ? "0" + seconds : seconds;
+const secondsToSeconds = (seconds) => {
+    const onlySeconds = seconds % 60;
+    const strSec = (onlySeconds < 10) ? "0" + onlySeconds : onlySeconds;
+    return strSec;
+}
+
+const setSeconds = (strSec) => {
     document.getElementById("seconds").innerHTML = strSec;
 }
 
-const setTimeOnPage = () => {
-    setMinutes();
-    setSeconds();
+const setTimeOnPage = (totalSeconds) => {
+    setMinutes(secondsToMinutes(totalSeconds));
+    setSeconds(secondsToSeconds(totalSeconds));
 }
 
 const onFinishTimer = () => {
     window.alert("Time's up!");
 
-    // do a beep sound
-    var beep = new Audio("assets/beep.mp3");
-    beep.play();
+    // end the timer
+    timer.endTimer();
 
     // change the state
     changeState();
@@ -117,8 +129,15 @@ const onFinishTimer = () => {
 const updatePage = () => {
     var state = pageState[pageState.currentState];
 
+    // set the time on the page
+    setTimeOnPage(minutesToSeconds(state.time));
+
     // create a timer object
-    timer = new Timer(minutesToSeconds(state.time), setTimeOnPage, onFinishTimer);
+    timer = new Timer(
+        minutesToSeconds(state.time),
+        () => setTimeOnPage(timer.time),
+        onFinishTimer
+    );
     timer.start();
 
     // update the page style based on the page state
