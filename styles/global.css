@@ -1,8 +1,23 @@
-.container {
-    width: 50vw;
+.wrapper {
+    width: 400px;
+    min-width: 380px;
     height: -webkit-fill-available;
     display: flex;
     flex-direction: column;
+    margin: auto;
+}
+
+@media screen and (min-width: 600px) {
+    .wrapper {
+        width: 400px;
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    .wrapper {
+        width: 96vw;
+    }
 }
 
 h1 {

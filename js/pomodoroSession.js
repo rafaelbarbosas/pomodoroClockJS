@@ -166,5 +166,5 @@ const updatePage = () => {
     );
     document.body.style.backgroundColor = state.backgroundColor;
     document.body.style.color = state.color;
-    document.getElementsByClassName("container")[0].style.backgroundColor = state.container.backgroundColor;
+    document.getElementsByClassName("wrapper")[0].style.backgroundColor = state.container.backgroundColor;
 }
