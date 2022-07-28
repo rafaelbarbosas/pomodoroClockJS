@@ -9,7 +9,7 @@ const pageState = {
     work: {
         time: null,
         title: "Work time ⏰",
-        buttonText: "Start Break",
+        buttonText: "Start the break",
         backgroundColor: "#7b1562",
         color: "#f5f5f5",
         timer: {
@@ -28,7 +28,7 @@ const pageState = {
     break: {
         time: null,
         title: "Break Time ☕",
-        buttonText: "Start work",
+        buttonText: "Start to work",
         backgroundColor: "#627b15",
         color: "#f5f5f5",
         timer: {
@@ -120,13 +120,16 @@ const setTimeOnPage = (totalSeconds) => {
 }
 
 const onFinishTimer = () => {
-    window.alert("Time's up!");
+    const state = pageState[pageState.currentState];
 
-    // end the timer
-    timer.endTimer();
+    // confirm if the user wants to go to pause/work
+    if (window.confirm(`Time's up! Do you want to ${state.buttonText.toLocaleLowerCase()}?`)) {
+        // end the timer
+        timer.endTimer();
 
-    // change the state
-    changeState();
+        // change the state
+        changeState();
+    }
 }
 
 const updatePage = () => {
